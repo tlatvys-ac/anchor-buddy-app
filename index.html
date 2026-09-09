@@ -82,20 +82,32 @@
     }
     .feature-cols div { padding: 3px 0; }
     .feature-cols strong { color: var(--text-strong); }
-    .layout-2 {
+    .shots {
         display: flex;
-        gap: 26px;
+        gap: 16px;
         align-items: flex-start;
+        flex-wrap: wrap;
+        margin-top: 22px;
+        /* break out of the 660px text column: take up to 1000px of
+           the viewport, centered, while the prose stays narrow */
+        width: min(1000px, calc(100vw - 48px));
+        margin-left: 50%;
+        transform: translateX(-50%);
     }
-    .layout-2 figure { margin: 0; flex: 0 0 240px; }
-    .layout-2 img {
+    .shots figure { margin: 0; flex: 1 1 260px; min-width: 220px; }
+    .shots img {
         display: block;
         width: 100%;
         height: auto;
         border-radius: 8px;
         border: 1px solid var(--border);
     }
-    .layout-2 figcaption { margin-top: 6px; font-size: 11px; color: var(--muted); text-align: center; }
+    .shots figcaption {
+        margin-top: 6px;
+        font-size: 11px;
+        color: var(--muted);
+        text-align: center;
+    }
     ol { margin: 0; padding-left: 22px; }
     li { margin-bottom: 10px; }
     li::marker { color: var(--accent); font-weight: 700; }
@@ -120,8 +132,6 @@
     }
     footer { margin-top: 56px; text-align: center; color: var(--muted); font-size: 12px; }
     @media (max-width: 620px) {
-        .layout-2 { flex-direction: column; }
-        .layout-2 figure { flex: none; max-width: 280px; margin: 0 auto; }
         .feature-cols { grid-template-columns: 1fr; }
     }
 </style>
@@ -144,21 +154,29 @@
 
     <section>
         <div class="divider"><span>What's inside</span></div>
-        <div class="layout-2">
+        <div class="feature-cols">
+            <div><strong>Anchor</strong> — one-click anchor placement (mask-aware), align &amp; distribute, comp guides.</div>
+            <div><strong>Colors</strong> — a color library and fill/stroke editing: eyedropper, on/off, one-click swap.</div>
+            <div><strong>Curves</strong> — copy, paste, and preset easing curves between keyframes.</div>
+            <div><strong>Layers</strong> — stagger, reverse order, batch rename.</div>
+            <div><strong>Type</strong> — counters, text splitting, box rigs, wave and cascade animators.</div>
+            <div><strong>UI Suite</strong> — UI builder rigs, corner control, null tools, vector rebuilds, liner.</div>
+            <div><strong>Animation</strong> — posterizer, randomizer, motion time.</div>
+            <div><strong>Custom</strong> — collect your favorite tools into one tab, in your order.</div>
+        </div>
+        <div class="shots">
             <figure>
-                <img src="images/panel.png" alt="The Anchor Buddy panel showing the UI Suite tab" loading="lazy">
-                <figcaption>The UI Suite tab — one of eight.</figcaption>
+                <img src="images/anchor.png" alt="The Anchor tab: anchor grid with align, distribute, and guides" loading="lazy">
+                <figcaption>Anchor — mask-aware placement, align &amp; distribute</figcaption>
             </figure>
-            <div class="feature-cols" style="grid-template-columns: 1fr;">
-                <div><strong>Anchor</strong> — one-click anchor point placement, plus comp guides.</div>
-                <div><strong>Colors</strong> — a color library and fill/stroke editing with an eyedropper.</div>
-                <div><strong>Curves</strong> — copy, paste, and preset easing curves between keyframes.</div>
-                <div><strong>Layers</strong> — stagger, reverse order, batch rename.</div>
-                <div><strong>Type</strong> — counters, text splitting, box rigs, wave and cascade animators.</div>
-                <div><strong>UI Suite</strong> — UI builder rigs, corner control, null tools, vector rebuilds, liner.</div>
-                <div><strong>Animation</strong> — posterizer, randomizer, motion time.</div>
-                <div><strong>Custom</strong> — collect your favorite tools into one tab, in your order.</div>
-            </div>
+            <figure>
+                <img src="images/colors.png" alt="The Colors tab: color library and fill/stroke editing" loading="lazy">
+                <figcaption>Colors — library, eyedropper, fill &amp; stroke</figcaption>
+            </figure>
+            <figure>
+                <img src="images/curves.png" alt="The Curves tab: easing curve editor and preset library" loading="lazy">
+                <figcaption>Curves — easing editor &amp; preset library</figcaption>
+            </figure>
         </div>
     </section>
 
